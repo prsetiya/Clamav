@@ -1,0 +1,138 @@
+# Event Handling Workflows
+
+## Workflows Overview
+These flows are optional unless flow admin needs to build custom logic like displaying a Screen pop on the Agent's desktop etc. on occurrence of certain events. With v3.0 flows there will be default handling for all the events like
+adding participant , removing participant , closing the conversation etc. If flow admin needs any alternative handling or additional business logic then these flows can be imported and customized as per the requirement.
+These event handling flows are media channel agnostic and if different handling is required for channels or assets, then one can deploy as many flows as per the use case.
+
+### Routed Event flow
+* This workflow will be triggered when an agent is successfully assigned to a Task (typically after a Queue Task request and agent has accepted the task).
+
+#### When do you need Routed Event Flow ?
+
+* Routed event flow is needed when you want to do some customization when the task has been assigned to an agent.
+
+#### Nodes of Routed Event Flow
+
+<img width="800" alt="WxCC Task V2" src="TaskRoutedWxccTaskV2.png">
+
+Under the configuration section , we can see the event selected is Task Routed so this flow will be triggered on the Task Routed event. We can use the available variables from the
+output variables section.
+
+If you want to run the Routed Event flow to run only for specific asset then we need to enable the conditions option and add condition to the "WxCC Task V2" Node.
+For enabling conditions please refer to the Conditions sections.
+
+As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
+
+<img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
+
+### Modified Event flow
+
+* This workflow will be triggered when an agent has done a conversation transfer request or a conference request.
+
+#### When do you need Modified Event Flow ?
+* Modified event flow is needed when you want to do some customization when the task has been transferred or conferenced.
+
+#### Nodes of Modified Event Flow
+
+<img width="800" alt="ModifiedTaskv2" src="ModifiedTaskv2.png">
+
+Under the configuration section , we can see the event selected is Task Modified so this flow will be triggered on the Task Modified event. We can use the available variables from the
+output variables section.
+
+If you want to run the Modified Event flow to run only for specific asset then we need to enable the conditions option and add condition to the "WxCC Task V2" Node.
+For enabling conditions please refer to the Conditions section.
+
+As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
+
+<img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
+
+##### Branch node
+
+<img width="800" alt="Branch" src="Branch.png">
+
+In the branch we are specifying if "webex.context" is add or remove that means if we are trying to add or remove participant from the
+contact then we can proceed further with the flow. In this sample we are showing screen pop if the "webex.context" is add or remove.
+
+### Closed Event flow
+
+* This workflow will be triggered when an agent or system has ended a task.
+
+#### When do you need Closed Event Flow ?
+* Closed event flow is needed when you want to do some customization when the task has been ended.
+
+#### Nodes of Closed Event Flow
+
+<img width="800" alt="ClosedTaskv2" src="ClosedTaskv2.png">
+
+Under the configuration section , we can see the event selected is Task Closed so this flow will be triggered on the Task Closed event. We can use the available variables from the
+output variables section.
+
+If you want to run the Closed Event flow to run only for specific asset then we need to enable the conditions option and add condition to the "WxCC Task V2" Node.
+For enabling conditions please refer to the Conditions section.
+
+As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
+
+<img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
+
+##### These event flows are applicable for all channels by default. If v2.x shared flows are already available in the same org, refer to the migration strategy section.
+
+## Conditions
+
+For condition we can use the "webex.destination" field which will help us to determine the asset.
+Values of "webex.destination" for different channels: -
+* LiveChat :- App ID
+* Whatsapp :- App ID
+* Facebook :- App ID
+* Email :- App ID
+* SMS :- Service Number
+
+The App ID  of a particular asset can be obtained from the assets→apps page in Webex Connect portal.
+
+<img width="800" alt="App" src="App.png">
+
+If we want to run the flow for multiple assets then each new "equals" condition must be added with the OR operator.
+
+<img width="800" alt="OrCondition" src="ORCondition.png">
+
+If we don't want to run the flow for a specific asset then we can use "notequals" condition.
+
+<img width="800" alt="notequalssinglecondition" src="notequalssinglecondition.png">
+
+If we don't want to the run the flow for multiple assets then each "notequals" condition must be added with the AND operator.
+
+<img width="800" alt="NotEquals" src="NotEquals.png">
+
+### Using variables or details in event flows
+
+Evaluate node is extracting variables from json. 
+In evaluate node we are defining and assigning all the predefined system variables.
+
+<img width="800" alt="Evaluate" src="Evaluate.png">
+
+We also have helper method to extract flow and global variables which are basically set in the main flows via set variable node.
+
+<img width="800" alt="Helper method" src="Helper method.png">
+
+Note : Predefined System Variables and Extracted variables can be used to do any custom logic like screen pop or http calls.
+Refer to [Screen Pop Readme](./Sample/Usage of Screen Pop in Flows/README.md)
+All the sample event flows demonstrate screen pop usage though they can be used for building other custom logic also.
+
+## Quick start on Workflows
+
+* Follow the process for Organization setup in WxCC with IMI Integration.
+* Download the sample flow template from the repository.
+* Import the flows in your Webex Connect service.
+* Add authorizations at integration level.
+* For Resolve Conversation node flow id needs to be updated manually. Flow id can be obtained from the address bar. For example flow id (41896) can be obtained from the url https://testorg.datacenter.webexconnect.io/flowdesigner/flow/v3/flowView?flowId=41896
+* Modify the flows as per your use case.
+* Make flows live with the configured assets.
+
+Note : Queue selection from queue task node is mandatory for any channel flows before making flow live.
+
+## Migration Strategy
+* Flow admins can manually migrate the existing main flows for each asset to V3.0 at their pace.
+* The shared flows can be manually migrated to the V3.0 versions only when all the main flows for each asset are migrated already.
+* If the org has migrated only a few of their main flows to V3.0, shared V2.x flows should have the condition to prevent running for contacts created via V3.0 flows. Similarly, V3.0 shared flows should have the condition to run only for the assets migrated to V3.0.
+* For migration, refer to the steps mentioned in 
+  [Migration Strategy](Migration Strategy.pdf)
