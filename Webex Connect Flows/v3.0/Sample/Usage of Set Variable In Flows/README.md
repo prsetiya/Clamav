@@ -7,7 +7,8 @@
 - The example uses fields from a pre-chat form to inject into the system, however Set Variable Node can inject any variable into the system.
 - For more details on Set Variable please refer to https://help.imiconnect.io/docs/set-variable. 
 - Example of Set Variable node.
-- <img width="800" alt="Screen Pop" src="SetVariable.png">
+  
+  <img width="800" alt="Screen Pop" src="../../images/SetVariable.png">
 
 The folder includes the following sample flows :
 ## Media Specific Workflow :

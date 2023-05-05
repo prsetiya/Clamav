@@ -139,7 +139,7 @@ We also have helper method to extract flow and global variables which are basica
 <img width="800" alt="Helper method" src="Helper method.png">
 
 Note : Predefined System Variables and Extracted variables can be used to do any custom logic like screen pop or http calls.
-Refer to [Screen Pop Readme](./Sample/Usage of Screen Pop in Flows/README.md)
+Refer to [Screen Pop Readme](../../Sample/Usage of Screen Pop in Flows/README.md)
 All the sample event flows demonstrate screen pop usage though they can be used for building other custom logic also.
 
 
