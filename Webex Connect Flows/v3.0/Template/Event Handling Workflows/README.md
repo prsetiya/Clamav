@@ -6,21 +6,25 @@ adding participant , removing participant , closing the conversation etc. If flo
 These event handling flows are media channel agnostic and if different handling is required for channels or assets, then one can deploy as many flows as per the use case.
 
 ### Routed Event flow
-* This workflow will be triggered when an agent is successfully assigned to a Task (typically after a Queue Task request and agent has accepted the task).
+* This workflow will be triggered when an agent is successfully assigned to a Task. The event for this workflow is 'Task Routed'. So once the task has been routed to the agent and the
+agent has accepted the task then this workflow will be triggered.
 
 #### When do you need Routed Event Flow ?
 
-* Routed event flow is needed when you want to do some customization once the task has been assigned to an agent.
+* Routed event flow is an optional flow .It is needed only when you want to do some customization like screen pop or http calls after the task has been assigned to an agent.
 
-#### Nodes of Routed Event Flow
+#### Start Node of Routed Event Flow
 
 <img width="800" alt="WxCC Task V2" src="TaskRouted.png">
 
 Under the configuration section , we can see the event selected is Task Routed so this flow will be triggered on the Task Routed event. We can use the available variables from the
 output variables section.
 
-If you want to run the Routed Event flow to run only for specific asset then we need to enable the conditions option and add condition to the "WxCC Task V2" Node.
-For enabling conditions please refer to the Conditions sections.
+If you want to run the Routed Event flow to run only for specific asset or channel then we need to enable the conditions option and add condition to the "WxCC Task V2" Node.
+For adding conditions please refer to the 'Adding Conditions In Flow' section.
+
+There is no restriction on the number of Routed Event Flow. You can add as many Routed Event Flow you need if different handling is required for each channel or asset.
+But in this case you need to specify condition for each flow.
 
 As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
 
@@ -28,12 +32,13 @@ As webex.variables and webex.RequestBody are nested variables , we are assigning
 
 ### Modified Event flow
 
-* This workflow will be triggered when an agent has done a conversation transfer request or a conference request.
+* This workflow will be triggered when an agent has done a conversation transfer request or a conference request. The event for this workflow is 'Task Modified'. So once the task has been transferred to another agent or
+  the task has been conferenced with another agent then this workflow will be triggered.
 
 #### When do you need Modified Event Flow ?
-* Modified event flow is needed when you want to do some customization when the task has been transferred or conferenced.
+* Modified event flow is an optional flow. It is needed only when you want to do some customization like Screen Pop or http calls after the task has been transferred or conferenced.
 
-#### Nodes of Modified Event Flow
+#### Start Node of Modified Event Flow
 
 <img width="800" alt="ModifiedTaskv2" src="TaskModified.png">
 
@@ -41,11 +46,15 @@ Under the configuration section , we can see the event selected is Task Modified
 output variables section.
 
 If you want to run the Modified Event flow to run only for specific asset then we need to enable the conditions option and add condition to the "WxCC Task V2" Node.
-For enabling conditions please refer to the Conditions section.
+For enabling conditions please refer to the 'Adding Conditions In Flow' section.
+
+There is no restriction on the number of Modified Event Flow. You can add as many Modified Event Flow you need if different handling is required for each channel or asset.
+But in this case you need to specify condition for each flow.
 
 As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
 
 <img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
+
 
 ##### Branch node
 
@@ -56,12 +65,13 @@ contact then we can proceed further with the flow. In this sample we are showing
 
 ### Closed Event flow
 
-* This workflow will be triggered when an agent or system has ended a task.
+* This workflow will be triggered when an agent or system has ended a task and the conversation is closed.The event for this workflow is 'Task Closed'. So once the task has been closed
+then this workflow will be triggered.
 
 #### When do you need Closed Event Flow ?
-* Closed event flow is needed when you want to do some customization when the task has been ended.
+* Closed event flow is an optional flow. It is needed only when you want to do some customization like Screen Pop or http calls when the task has been ended.
 
-#### Nodes of Closed Event Flow
+#### Start Node of Closed Event Flow
 
 <img width="800" alt="ClosedTaskv2" src="TaskClosed.png">
 
@@ -69,7 +79,10 @@ Under the configuration section , we can see the event selected is Task Closed s
 output variables section.
 
 If you want to run the Closed Event flow to run only for specific asset then we need to enable the conditions option and add condition to the "WxCC Task V2" Node.
-For enabling conditions please refer to the Conditions section.
+For enabling conditions please refer to the 'Adding Conditions In Flow' section.
+
+There is no restriction on the number of Closed Event Flow. You can add as many Closed Event Flow you need if different handling is required for each channel or asset.
+But in this case you need to specify condition for each flow.
 
 As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
 
