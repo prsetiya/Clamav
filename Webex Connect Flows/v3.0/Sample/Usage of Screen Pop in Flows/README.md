@@ -13,7 +13,7 @@
   - Display Settings that will define the loading behaviour of screen pop such as Screen Pop can be loaded inside desktop in the same browser tab, or in the
     new browser tab.
   
-The folder includes the following sample flow for Screen Pop :
+This folder includes the following sample flow for Screen Pop :
 ## Task Close Flow with Screen Pop 
 - This sample flow will send a screen pop message to the agent desktop on Webex Contact Center once the contact is closed. Though screen pop is not limited to task close flow.
 It can be used in any event handling workflow.
@@ -22,9 +22,9 @@ It can be used in any event handling workflow.
 
 There are two ways to use variables for a screen pop.
 1. We can use the existing system defined variables.
-- We have assigned webex.variables to response.
+- We have assigned webex.variables to response in the 'Transition Actions' section of the start node.
 
-<img width="800" alt="WxCCClosedTaskV2" src="WxCCClosedTaskV2.png">
+<img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
 
 - We can extract the customerId in the evaluate node.
 

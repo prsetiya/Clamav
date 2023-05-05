@@ -113,7 +113,7 @@ The App ID  of a particular asset can be obtained from the assets→apps page in
 
 <img width="800" alt="App" src="App.png">
 
-If we want to run the flow for multiple assets then each new "equals" condition must be added with the OR operator.
+If we want to run the flow for multiple assets then additional new "equals" condition must be added with the OR operator.
 
 <img width="800" alt="OrCondition" src="ORCondition.png">
 
@@ -121,7 +121,7 @@ If we don't want to run the flow for a specific asset then we can use "notequals
 
 <img width="800" alt="notequalssinglecondition" src="notequalssinglecondition.png">
 
-If we don't want to the run the flow for multiple assets then each "notequals" condition must be added with the AND operator.
+If we don't want to the run the flow for multiple assets then additional "notequals" condition must be added with the AND operator.
 
 <img width="800" alt="NotEquals" src="NotEquals.png">
 
