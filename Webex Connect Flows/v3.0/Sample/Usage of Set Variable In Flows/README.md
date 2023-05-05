@@ -6,9 +6,6 @@
 ## Set Variable
 - The example uses fields from a pre-chat form to inject into the system, however Set Variable Node can inject any variable into the system.
 - For more details on Set Variable please refer to https://help.imiconnect.io/docs/set-variable. 
-- Example of Set Variable node.
-  
-  <img width="800" alt="Screen Pop" src="../../images/SetVariable.png">
 
 The folder includes the following sample flows :
 ## Media Specific Workflow :
@@ -19,10 +16,24 @@ The folder includes the following sample flows :
     - The customer can also provide a short description of the issue.
     - These additional contextual details about the interaction are injected into the contact centre using the "Set Variable" Node. The sample flow gives an example of how to do that using the "Set Flow Variable" method in the "Set Variable" Node.
     - The Agent can view the injected details in the interaction panel of Agent Desktop.
+  
+    <img width="800" alt="Screen Pop" src="../../images/SetVariable.png">
+
 ## Media Agnostic Event Workflow :
 - ### Task Routed Workflow :
     - The contextual information injected from the media-specific workflows is also available to the shared flow.
     - An "Evaluate" node can extract these details. The sample flow gives an example of how to do that.
+   
+    <img width="800" alt="Helper method" src="../../images/Helper method.png">
+
+    - In this sample flow we can see that in the Live Chat Inbound Flow we have set the IssueDescription and IssueType. We are getting the values of IssueDescription
+    and IssueType from the customer entered values of IssueDescription and IssueType. We are extracting these values in the Task Routed Flow. We can see these values
+    in the interaction panel on the agent desktop.
+
+   <img width="800" alt="Helper method" src="../../images/chat.png">
+  
+   <img width="800" alt="Helper method" src="../../images/SetVariableExample.png">
+
 
 ## Quick Start on Workflows
 1. Import the flows in your Webex Connect Service.
