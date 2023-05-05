@@ -29,7 +29,7 @@ This folder includes the following sample flow :
 - In the sample we are sending the message as 'Hi your PIQ is $(n2475.positionInQueue) and your estimated wait time is $(n2475.estimatedWaitTime)'so $(n2475.positionInQueue) and $(n2475.estimatedWaitTime)
   will be replaced to the position in queue of the contact and estimated waiting time.
 
-  <img width="800" alt="Screen Pop" src="../../images/inappmessaging.png">
+  <img width="800" alt="Screen Pop" src="../../images/Inappmessaging.png">
   
 - Example of the piq and ewt presented to the customer on the live chat widget.
 
