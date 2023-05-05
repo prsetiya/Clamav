@@ -1,15 +1,7 @@
 
 
-# Set Variable, PIQ And EWT Sample Flows Overview :
-- This example demonstrates the usage of Set Variable node, PIQ and EWT node using Live Chat Flow and Task Route Flow. However, the use case is not limited to the livechat only. Any workflow can use the Set Variable node, PIQ and EWT node.
-## PIQ and EWT
-- Position in the Queue (PIQ) provides the contact's current position in the selected queue.
-- Estimated Wait Time (EWT) provides an estimated waiting time or the average wait time for the contact before talking to an agent.
-- PIQ and EWT node can be placed only after the Queue Task node.
-- For more details on PIQ and EWT please refer to the below documentation.
-- https://help.imiconnect.io/docs/piq-and-ewt
-- Example of PIQ and EWT node.
-- <img width="800" alt="Screen Pop" src="PIQEWT.png">
+# Set Variable Sample Flows Overview :
+- This example demonstrates the usage of Set Variable node using Live Chat Flow and Task Routed Flow. However, the use case is not limited to the livechat only. Any workflow can use the Set Variable node.
 
 ## Set Variable
 - The example uses fields from a pre-chat form to inject into the system, however Set Variable Node can inject any variable into the system.
@@ -19,7 +11,7 @@
 
 The folder includes the following sample flows :
 ## Media Specific Workflow :
-- ### Live Chat Inbound Sample Flow with Set Variable, PIQ and EWT :
+- ### Live Chat Inbound Sample Flow with Set Variable :
     - Every inbound customer message sent over the configured customer chat widget will trigger this workflow.
     - This workflow represents a typical use case for a bank, where a customer reaches out to customer support executives for issues with credit cards, debit cards, savings accounts, or loan enquiry.
     - The customer selects the issue type from the pre-chat form dropdown.
