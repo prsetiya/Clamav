@@ -25,3 +25,12 @@ This folder includes the following sample flow :
 - If you don't want to show piq value as -1 then you can add a branch to check if the value is not -1 then show the value of piq otherwise don't display anothing related to piq.
 
   <img width="800" alt="Screen Pop" src="../../images/PIQEWT.png">
+
+- In the sample we are sending the message as 'Hi your PIQ is $(n2475.positionInQueue) and your estimated wait time is $(n2475.estimatedWaitTime)'so $(n2475.positionInQueue) and $(n2475.estimatedWaitTime)
+  will be replaced to the position in queue of the contact and estimated waiting time.
+
+  <img width="800" alt="Screen Pop" src="../../images/inappmessaging.png">
+  
+- Example of the piq and ewt presented to the customer on the live chat widget.
+
+  <img width="800" alt="Screen Pop" src="../../images/PIQEWTExample.png">
