@@ -30,13 +30,14 @@ There are two ways to use variables for a screen pop.
 
 <img width="800" alt="CustomerId" src="CustomerId.png">
 
-- In the screen pop node for query params we are using the extracted customerId from the previous step and operation we have hardcoded to closed.
+- In the screen pop node for query params we are using the extracted customerId from the previous step and operation we have hardcoded to close.
 - We are setting url as www.google.com in the sample so this screenpop will redirect the agent to the particular url.
   <img width="800" alt="Screen Pop" src="ScreenPopNode.png">
 
   - Example of Screen Pop message presented to the agent:-
+  - In this example we can see the url is set to "www.google.com" and query params like customerId and operation is set to the correct values.
 
-  <img width="800" alt="Screen Pop" src="ScreenPopExample.png">
+  <img width="800" alt="Screenpop" src="ScreenPopClosed.png">
 
 2. We can use the set variable node in the main flow to set the variables.
 - We can extract these variables in the task close flow in the evaluate node using the extract helper function.
@@ -49,6 +50,3 @@ There are two ways to use variables for a screen pop.
  
   <img width="800" alt="Screen Pop Closed" src="Screen Pop Closed.png">
 
-- Example of Screen Pop message presented to the agent:-
-
-  <img width="800" alt="Screenpop" src="Screenpop.png">
