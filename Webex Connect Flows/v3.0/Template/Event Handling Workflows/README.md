@@ -15,7 +15,7 @@ agent has clicked on the accept button then this workflow will be triggered.
 
 #### Start Node of Routed Event Flow
 
-<img width="800" alt="WxCC Task V2" src="TaskRouted.png">
+<img width="800" alt="WxCC Task V2" src="../../images/TaskRouted.png">
 
 Under the configuration section , we can see the event selected is Task Routed so this flow will be triggered on the Task Routed event. We can use the available variables from the
 output variables section.
@@ -28,7 +28,7 @@ But in this case you need to specify condition for each flow.
 
 As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
 
-<img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
+<img width="800" alt="WxCC Task v2 Transition Actions" src="../../images/WxCC Task v2 Transition Actions.png">
 
 ### Modified Event flow
 
@@ -40,7 +40,7 @@ As webex.variables and webex.RequestBody are nested variables , we are assigning
 
 #### Start Node of Modified Event Flow
 
-<img width="800" alt="ModifiedTaskv2" src="TaskModified.png">
+<img width="800" alt="ModifiedTaskv2" src="../../images/TaskModified.png">
 
 Under the configuration section , we can see the event selected is Task Modified so this flow will be triggered on the Task Modified event. We can use the available variables from the
 output variables section.
@@ -54,12 +54,12 @@ But in this case you need to specify condition for each flow.
 
 As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
 
-<img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
+<img width="800" alt="WxCC Task v2 Transition Actions" src="../../images/WxCC Task v2 Transition Actions.png">
 
 
 ##### Branch node
 
-<img width="800" alt="Branch" src="Branch.png">
+<img width="800" alt="Branch" src="../../images/Branch.png">
 
 In the branch we are specifying if "webex.context" is add or remove that means if we are trying to add or remove participant from the
 contact then we can proceed further with the flow. In this sample we are showing screen pop if the "webex.context" is add or remove.
@@ -74,7 +74,7 @@ then this workflow will be triggered.
 
 #### Start Node of Closed Event Flow
 
-<img width="800" alt="ClosedTaskv2" src="TaskClosed.png">
+<img width="800" alt="ClosedTaskv2" src="../../images/TaskClosed.png">
 
 Under the configuration section , we can see the event selected is Task Closed so this flow will be triggered on the Task Closed event. We can use the available variables from the
 output variables section.
@@ -87,7 +87,7 @@ But in this case you need to specify condition for each flow.
 
 As webex.variables and webex.RequestBody are nested variables , we are assigning these to response and requestBody respectively so that we can use them further.
 
-<img width="800" alt="WxCC Task v2 Transition Actions" src="WxCC Task v2 Transition Actions.png">
+<img width="800" alt="WxCC Task v2 Transition Actions" src="../../images/WxCC Task v2 Transition Actions.png">
 
 ##### These event flows are applicable for all channels by default. If v2.x shared flows are already available in the same org, refer to the migration strategy section.
 
@@ -95,7 +95,7 @@ As webex.variables and webex.RequestBody are nested variables , we are assigning
 If you want to run your flow to be triggered only if the specified conditions are met then it can be achieved by adding conditions.
 You can choose any condition or a set of conditions out of conditions shown in the dropdown of the below image based on your usecase.
 
-<img width="800" alt="ConditionsDropDown" src="ConditionsDropDown.png">
+<img width="800" alt="ConditionsDropDown" src="../../images/ConditionsDropDown.png">
 
 ### Examples of addition conditions in Flow.
 1. If you want to run a flow to run only for a particular channel let's say LiveChat then you can specify condition like webex.mediaChannel equals web.
@@ -111,19 +111,19 @@ Values of "webex.destination" for different channels: -
 
 The App ID  of a particular asset can be obtained from the assets→apps page in Webex Connect portal.
 
-<img width="800" alt="App" src="App.png">
+<img width="800" alt="App" src="../../images/App.png">
 
 If we want to run the flow for multiple assets then additional new "equals" condition must be added with the OR operator.
 
-<img width="800" alt="OrCondition" src="ORCondition.png">
+<img width="800" alt="OrCondition" src="../../images/ORCondition.png">
 
 If we don't want to run the flow for a specific asset then we can use "notequals" condition.
 
-<img width="800" alt="notequalssinglecondition" src="notequalssinglecondition.png">
+<img width="800" alt="notequalssinglecondition" src="../../images/notequalssinglecondition.png">
 
 If we don't want to the run the flow for multiple assets then additional "notequals" condition must be added with the AND operator.
 
-<img width="800" alt="NotEquals" src="NotEquals.png">
+<img width="800" alt="NotEquals" src="../../images/NotEquals.png">
 
 For more details on adding conditions please refer https://help.imiconnect.io/docs/start-node#trigger-conditions-in-start-node
 
@@ -132,11 +132,11 @@ For more details on adding conditions please refer https://help.imiconnect.io/do
 Evaluate node is extracting variables from json. 
 In evaluate node we are defining and assigning all the predefined system variables.
 
-<img width="800" alt="Evaluate" src="Evaluate.png">
+<img width="800" alt="Evaluate" src="../../images/Evaluate.png">
 
 We also have helper method to extract flow and global variables which are basically set in the main flows via set variable node.
 
-<img width="800" alt="Helper method" src="Helper method.png">
+<img width="800" alt="Helper method" src="../../images/Helper method.png">
 
 Note : Predefined System Variables and Extracted variables can be used to do any custom logic like screen pop or http calls.
 Refer to [Screen Pop Readme](../../Sample/Usage of Screen Pop in Flows/README.md)
