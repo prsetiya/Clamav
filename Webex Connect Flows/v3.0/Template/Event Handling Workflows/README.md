@@ -10,11 +10,11 @@ These event handling flows are media channel agnostic and if different handling 
 
 #### When do you need Routed Event Flow ?
 
-* Routed event flow is needed when you want to do some customization when the task has been assigned to an agent.
+* Routed event flow is needed when you want to do some customization once the task has been assigned to an agent.
 
 #### Nodes of Routed Event Flow
 
-<img width="800" alt="WxCC Task V2" src="TaskRoutedWxccTaskV2.png">
+<img width="800" alt="WxCC Task V2" src="TaskRouted.png">
 
 Under the configuration section , we can see the event selected is Task Routed so this flow will be triggered on the Task Routed event. We can use the available variables from the
 output variables section.
@@ -35,7 +35,7 @@ As webex.variables and webex.RequestBody are nested variables , we are assigning
 
 #### Nodes of Modified Event Flow
 
-<img width="800" alt="ModifiedTaskv2" src="ModifiedTaskv2.png">
+<img width="800" alt="ModifiedTaskv2" src="TaskModified.png">
 
 Under the configuration section , we can see the event selected is Task Modified so this flow will be triggered on the Task Modified event. We can use the available variables from the
 output variables section.
@@ -63,7 +63,7 @@ contact then we can proceed further with the flow. In this sample we are showing
 
 #### Nodes of Closed Event Flow
 
-<img width="800" alt="ClosedTaskv2" src="ClosedTaskv2.png">
+<img width="800" alt="ClosedTaskv2" src="TaskClosed.png">
 
 Under the configuration section , we can see the event selected is Task Closed so this flow will be triggered on the Task Closed event. We can use the available variables from the
 output variables section.
@@ -77,9 +77,17 @@ As webex.variables and webex.RequestBody are nested variables , we are assigning
 
 ##### These event flows are applicable for all channels by default. If v2.x shared flows are already available in the same org, refer to the migration strategy section.
 
-## Conditions
+## Adding Conditions In Flow
+If you want to run your flow to be triggered only if the specified conditions are met then it can be achieved by adding conditions.
+You can choose any condition or a set of conditions out of conditions shown in the dropdown of the below image based on your usecase.
 
-For condition we can use the "webex.destination" field which will help us to determine the asset.
+<img width="800" alt="ConditionsDropDown" src="ConditionsDropDown.png">
+
+### Examples of addition conditions in Flow.
+1. If you want to run a flow to run only for a particular channel let's say LiveChat then you can specify condition like webex.mediaChannel equals web.
+
+2. If you want to run a flow only for some specific asset then we can use  the "webex.destination" field which will help us to determine the asset.
+
 Values of "webex.destination" for different channels: -
 * LiveChat :- App ID
 * Whatsapp :- App ID
@@ -103,6 +111,8 @@ If we don't want to the run the flow for multiple assets then each "notequals" c
 
 <img width="800" alt="NotEquals" src="NotEquals.png">
 
+For more details on adding conditions please refer https://help.imiconnect.io/docs/start-node#trigger-conditions-in-start-node
+
 ### Using variables or details in event flows
 
 Evaluate node is extracting variables from json. 
@@ -118,17 +128,6 @@ Note : Predefined System Variables and Extracted variables can be used to do any
 Refer to [Screen Pop Readme](./Sample/Usage of Screen Pop in Flows/README.md)
 All the sample event flows demonstrate screen pop usage though they can be used for building other custom logic also.
 
-## Quick start on Workflows
-
-* Follow the process for Organization setup in WxCC with IMI Integration.
-* Download the sample flow template from the repository.
-* Import the flows in your Webex Connect service.
-* Add authorizations at integration level.
-* For Resolve Conversation node flow id needs to be updated manually. Flow id can be obtained from the address bar. For example flow id (41896) can be obtained from the url https://testorg.datacenter.webexconnect.io/flowdesigner/flow/v3/flowView?flowId=41896
-* Modify the flows as per your use case.
-* Make flows live with the configured assets.
-
-Note : Queue selection from queue task node is mandatory for any channel flows before making flow live.
 
 ## Migration Strategy
 * Flow admins can manually migrate the existing main flows for each asset to V3.0 at their pace.
