@@ -1,8 +1,8 @@
 # Instructions for using bot flow templates
 
 ## Q&A bot flow for Livechat channel
-Pre-requisites
-You must configure the following entities:
+- Pre-requisites
+- You must configure the following entities:
 1.	A Webex Connect tenant with bot builder app, WxCC nodes, and Livechat channel enabled
 2.	A Livechat app in connect
       * A website configuration in Webex Engage for the Livechat asset
@@ -14,8 +14,8 @@ You must configure the following entities:
       https://help.imiconnect.io/docs/qa-bots
 
 ## Q&A bot flow for SMS channel
-Pre-requisites
-You must configure the following entities:
+- Pre-requisites
+- You must configure the following entities:
 1.	A  Webex Connect tenant with bot builder app, WxCC nodes, and SMS channel enabled
 2.	A SMS number in Webex Connect
 3.  Q&A bot in the bot builder
@@ -25,8 +25,8 @@ You must configure the following entities:
       https://help.imiconnect.io/docs/qa-bots
 
 ## Task bot flow for Facebook channel
-Pre-requisites
-(Optional) This sample flow leverages a google sheet to fetch user info and add that user info to the said google sheet via sheet2api APIs. If you want to emulate this flow, you will need:
+- Pre-requisites
+- (Optional) This sample flow leverages a google sheet to fetch user info and add that user info to the said google sheet via sheet2api APIs. If you want to emulate this flow, you will need:
 
 1. A publicly accessible google sheet and a sheet2api account that has access to your google sheet. Refer to sheet2api documentation on how to make requests to your sheet.
 
